@@ -1,7 +1,6 @@
 SAP Cloud Platform (SCP) is an open platform-as-a-service (PaaS) product that provides core services, for building and extending cloud applications on multiple cloud IaaSes. SCP supports AWS, Azure, GCP, and Alibaba Cloud.
 
->
-One of the core services provided by SCP is PostgreSQL as a Service (PostgreSQL-as-a-Service). Each PostgreSQL-as-a-Service instance consists of 5 VMs - Postgres-Master, Postgres-Standby, and 3-PGPOOL VMs. Data is replicated asynchronously from Postgres-Master to Postgres-Standby.
+> One of the core services provided by SCP is PostgreSQL as a Service (PostgreSQL-as-a-Service). Each PostgreSQL-as-a-Service instance consists of 5 VMs - Postgres-Master, Postgres-Standby, and 3-PGPOOL VMs. Data is replicated asynchronously from Postgres-Master to Postgres-Standby.
 
 SCP manages more than 10000 PostgreSQL-as-a-Service instances across multiple IAASs.
 
