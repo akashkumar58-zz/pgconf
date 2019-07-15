@@ -14,8 +14,10 @@ A service **broker** is used to manage the backup of a large scale of PostgreSQL
 ## Centralized Monitoring of Backup & Restore
 Backup and Restore related SLAs are agreed upon by customers, hence monitoring of these features are quite important. A **monitoring agent** runs in every PostgreSQL VM to report its health metrics along with **backup status** of all the PostgreSQL cluster.
 
+<img src="https://github.com/akashkumar58/pgconf/blob/master/backup-status.png" width="420" align="left"> <img src="https://github.com/akashkumar58/pgconf/blob/master/backupStatus.png" width="420" float="right">
 
 ## Alerting System for Backup & Restore
-In case backup or restore of a particular PostgreSQL cluster fails, alerts are raised on multiple channels.
-
-![Backup-Alerts](https://github.com/akashkumar58/pgconf/blob/master/backupAlert.png)
+In case when backup fails or after restore the service instance is not running, email based alerts are raised.
+<p align="center">
+  <img src="https://github.com/akashkumar58/pgconf/blob/master/backupAlert.png" width="600"/>
+</p>
