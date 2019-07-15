@@ -9,15 +9,14 @@ PostgreSQL-as-a-Service leverages the disk **Snapshots** offering of different I
 
 For restore, the backed-up snapshot is used to **create disks**. These disks are **_mounted_** on the PostgreSQL VMs(primary & standby). The old persistent disks are released once the new disks are attached successfully. The service downtime depends on the time taken for creating the disks from the snapshot. On some IaaSes, it depends on the data size, whereas on others it is independent. In case of PITR based restore, WAL logs are replayed after disks are attached.
 
-A service broker is used to manage the backup of a large scale of PostgreSQL clusters. It schedules the backup of each service instance with some fixed interval(depending on SLAs). Restore is an on-demand service. The broker exposes API, to trigger restore on PostgreSQL cluster.
+A service **broker** is used to manage the backup of a large scale of PostgreSQL clusters. It **schedules** the backup of each service instance with some fixed interval(depending on SLAs). Restore is an on-demand event available as self-service to customer. The broker exposes API, to trigger restore on PostgreSQL cluster.
 
-## Centralized Monitoring System
+## Centralized Monitoring of Backup & Restore
 Backup and Restore related SLAs are agreed upon by customers, hence monitoring of these features are quite important. A **monitoring agent** runs in every PostgreSQL VM to report its health metrics along with **backup status** of all the PostgreSQL cluster.
 
-![Alt text](https://github.com/akashkumar58/pgconf/blob/master/backupStatus.png "Backup Status")
+<img align="left" src="https://github.com/akashkumar58/pgconf/blob/master/backupStatus.png" width="400" /><img align="right" src="https://github.com/akashkumar58/pgconf/blob/master/backup-status.png" width="400" />
 
-## Alerting System
+## Alerting System for Backup & Restore
 In case backup or restore of a particular PostgreSQL cluster fails, alerts are raised on multiple channels.
 
-![Alt text](https://github.com/akashkumar58/pgconf/blob/master/backupAlert.png "Backup Alert")
-
+<img align="centre" src="https://github.com/akashkumar58/pgconf/blob/master/backupAlert.png" width="600" />
